@@ -1,10 +1,7 @@
 const express = require("express");
+const api = require("./api");
 const app = express();
 
-app.get("/", (req, res) => {
-  res.json({
-    nombre: "Andres",
-  });
-});
+app.use("/api", api);
 
 module.exports = app;
