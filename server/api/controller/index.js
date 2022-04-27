@@ -1,5 +1,7 @@
+let data = [];
+
 exports.all = (req, res, next) => {
-  res.json({ method: "all" });
+  res.json({ data: data });
 };
 
 exports.get = (req, res, next) => {
@@ -7,7 +9,16 @@ exports.get = (req, res, next) => {
 };
 
 exports.post = (req, res, next) => {
-  res.json({ method: "post" });
+  const { body = {} } = req;
+  let task = {
+    description: body.description,
+    author: body.author,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
+
+  data.push(task);
+  res.json(task);
 };
 
 exports.put = (req, res, next) => {
