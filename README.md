@@ -44,46 +44,44 @@ Copy `.env.example` to `.env` and set your environment variables
 
 ### Get Tasks
 
-Method: Get
-Route: http://localhost:3000/api/tasks
-Request: Empty
-Response
-
-```json
-{
-  "data": [
-    {
-      "description": "Otra description",
-      "author": "Ulises Perez",
-      "createdAt": "2022-04-27T22:32:40.580Z",
-      "updatedAt": "2022-04-27T22:32:40.580Z"
-    }
-  ]
-}
-```
+- Method: Get
+- Route: http://localhost:3000/api/tasks
+- Request: Empty
+- Response
+  ```json
+  {
+    "data": [
+      {
+        "description": "Otra description",
+        "author": "Ulises Perez",
+        "createdAt": "2022-04-27T22:32:40.580Z",
+        "updatedAt": "2022-04-27T22:32:40.580Z"
+      }
+    ]
+  }
+  ```
 
 ### Post Tasks
 
-Method: Post
-Route: http://localhost:3000/api/tasks
-Request
+- Method: Post
+- Route: http://localhost:3000/api/tasks
+- Request
 
-```json
-{
-  "description": "Test Description",
-  "author": "Test Author"
-}
-```
-
-Response
-
-```json
-{
-  "data": {
+  ```json
+  {
     "description": "Test Description",
-    "author": "Test Author",
-    "createdAt": "2022-04-27T22:55:51.320Z",
-    "updatedAt": "2022-04-27T22:55:51.320Z"
+    "author": "Test Author"
   }
-}
-```
+  ```
+
+- Response
+  ```json
+  {
+    "data": {
+      "description": "Test Description",
+      "author": "Test Author",
+      "createdAt": "2022-04-27T22:55:51.320Z",
+      "updatedAt": "2022-04-27T22:55:51.320Z"
+    }
+  }
+  ```
