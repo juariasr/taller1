@@ -18,7 +18,7 @@ exports.post = (req, res, next) => {
   };
 
   data.push(task);
-  res.json(task);
+  res.json({ data: task });
 };
 
 exports.put = (req, res, next) => {
