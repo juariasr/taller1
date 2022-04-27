@@ -36,11 +36,11 @@ demostración del proyecto.
 
 Copy `.env.example` to `.env` and set your environment variables
 
-## Inicializacion
+## Initialization
 
 `npm start`
 
-##Endpoints
+## Endpoints
 
 ### Get Tasks
 
@@ -49,28 +49,31 @@ Route: http://localhost:3000/api/tasks
 Request: Empty
 Response
 
-````json
+```json
 {
-    "data": [
-        {
-            "description": "Otra description",
-            "author": "Ulises Perez",
-            "createdAt": "2022-04-27T22:32:40.580Z",
-            "updatedAt": "2022-04-27T22:32:40.580Z"
-        }
-    ]
-}```
+  "data": [
+    {
+      "description": "Otra description",
+      "author": "Ulises Perez",
+      "createdAt": "2022-04-27T22:32:40.580Z",
+      "updatedAt": "2022-04-27T22:32:40.580Z"
+    }
+  ]
+}
+```
 
 ### Post Tasks
+
 Method: Post
 Route: http://localhost:3000/api/tasks
 Request
+
 ```json
 {
-    "description": "Test Description",
-    "author":"Test Author"
+  "description": "Test Description",
+  "author": "Test Author"
 }
-````
+```
 
 Response
 
