@@ -9,7 +9,7 @@ exports.get = (req, res, next) => {
   const { id = "" } = params;
 
   const task1 = data.find(function (item) {
-    return item.author === id;
+    return item.id == id;
   });
 
   res.json({
@@ -76,11 +76,7 @@ exports.delete = (req, res, next) => {
   const { params = {} } = req;
   const { id = "" } = params;
 
-  const task1 = data.find(function (item) {
-    return item.author === id;
-  });
+  data = data.filter((data) => data.id != id);
 
-  data = data.filter((data) => data.author !== id);
-
-  res.json({ message: "Task Deleted" });
+  res.json({ message: "User Delete" });
 };
