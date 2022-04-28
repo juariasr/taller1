@@ -6,12 +6,12 @@ exports.all = (req, res, next) => {
 
 exports.get = (req, res, next) => {
   const { params = {} } = req;
-  const { id = '' } = params;
+  const { id = "" } = params;
 
-  const task1 = data.find(function(item){
+  const task1 = data.find(function (item) {
     return item.author === id;
   });
- 
+
   res.json({
     task1,
   });
@@ -20,6 +20,7 @@ exports.get = (req, res, next) => {
 exports.post = (req, res, next) => {
   const { body = {} } = req;
   let task = {
+    id: data.length + 1,
     description: body.description,
     author: body.author,
     createdAt: new Date(),

@@ -52,6 +52,7 @@ Copy `.env.example` to `.env` and set your environment variables
   {
     "data": [
       {
+        "id": 1,
         "description": "Otra description",
         "author": "Ulises Perez",
         "createdAt": "2022-04-27T22:32:40.580Z",
@@ -78,6 +79,7 @@ Copy `.env.example` to `.env` and set your environment variables
   ```json
   {
     "data": {
+      "id": 1,
       "description": "Test Description",
       "author": "Test Author",
       "createdAt": "2022-04-27T22:55:51.320Z",
