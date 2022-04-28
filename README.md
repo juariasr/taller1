@@ -120,21 +120,21 @@ Copy `.env.example` to `.env` and set your environment variables
   }
   ```
 
-  no task found
+  no task found by Id
 
   ```json
   {
-    "message": "Task Id not found in body Data."
+    "message": "No task found by id."
   }
   ```
 
-no description and author
+  no description and author
 
-```json
-{
-  "message": "No data Updated."
-}
-```
+  ```json
+  {
+    "message": "No data Updated."
+  }
+  ```
 
 ### Get ID Tasks
 
