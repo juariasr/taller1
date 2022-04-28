@@ -9,7 +9,7 @@ exports.get = (req, res, next) => {
   const { id = "" } = params;
 
   const task1 = data.find(function (item) {
-    return item.author === id;
+    return item.id == id;
   });
 
   res.json({
@@ -38,12 +38,8 @@ exports.put = (req, res, next) => {
 exports.delete = (req, res, next) => {
   const { params = {} } = req;
   const { id = '' } = params;
-
-  const task1 = data.find(function(item){
-    return item.author === id;
-  });
   
-  data = data.filter(data => data.author !== id);
+  data = data.filter(data => data.id != id);
  
   res.json({message : 'User Delete'});
 };
