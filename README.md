@@ -87,3 +87,51 @@ Copy `.env.example` to `.env` and set your environment variables
     }
   }
   ```
+
+### Update Task by Id
+
+- Method: PUT
+- Route: http://localhost:3000/api/tasks
+- Request
+
+```json
+  {
+    "id":1
+    "description": "Test Description",
+    "author": "Test Author"
+  }
+```
+
+- Response
+
+  Susccesfully Update:
+
+  ```json
+  {
+    "message": "Task Updated"
+  }
+  ```
+
+  task id not inside body
+
+  ```json
+  {
+    "message": "Task Id not found in body Data."
+  }
+  ```
+
+  no task found
+
+  ```json
+  {
+    "message": "Task Id not found in body Data."
+  }
+  ```
+
+no description and author
+
+```json
+{
+  "message": "No data Updated."
+}
+```

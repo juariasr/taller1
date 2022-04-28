@@ -35,34 +35,41 @@ exports.put = (req, res, next) => {
   // res.json({ method: "put" });
   const { body = {} } = req;
   const { id = -1 } = body;
+  const { description = " " } = body;
+  const { author = " " } = body;
+  let updated = false;
 
   if (id === -1) {
     next({
       statusCode: 501,
-      message: "Task Id not found in body Data.",
+      message: "Task Id not found inside body or is blank",
     });
   }
 
-  let task = {
-    id: body.id,
-    description: body.description,
-    author: body.author,
-  };
+  objIndex = data.findIndex((obj) => obj.id == id);
+  if (objIndex === -1) {
+    next({
+      statusCode: 504,
+      message: `No task found by id ${id} `,
+    });
+  }
 
-  objIndex = data.findIndex((obj) => obj.id == task.id);
+  if (description !== " ") {
+    data[objIndex].description = description;
+    updated = true;
+  }
 
-  // Log object to Console.
-  console.log("Before update: ", data[objIndex]);
+  if (author !== " ") {
+    data[objIndex].author = author;
+    updated = true;
+  }
 
-  // Update object's name property.
-  data[objIndex].description = task.description;
-  data[objIndex].author = task.author;
-  data[objIndex].updatedAt = new Date();
-
-  // Log object to console again.
-  console.log("After update: ", data[objIndex]);
-
-  res.json({ message: "Task Updated" });
+  if (updated === true) {
+    data[objIndex].updatedAt = new Date();
+    res.json({ message: "Task Updated." });
+  } else {
+    res.json({ message: "No data Updated." });
+  }
 };
 
 exports.delete = (req, res, next) => {
