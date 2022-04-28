@@ -96,7 +96,7 @@ Copy `.env.example` to `.env` and set your environment variables
 
 ```json
   {
-    "id":1
+    "id":1,
     "description": "Test Description",
     "author": "Test Author"
   }
@@ -157,7 +157,7 @@ Copy `.env.example` to `.env` and set your environment variables
   }
   ```
 
-  ### Delete Tasks
+### Delete Tasks
 
 - Method: Delete
 - Route: http://localhost:3000/api/tasks/1
