@@ -5,7 +5,16 @@ exports.all = (req, res, next) => {
 };
 
 exports.get = (req, res, next) => {
-  res.json({ method: "get" });
+  const { params = {} } = req;
+  const { id = '' } = params;
+
+  const task1 = data.find(function(item){
+    return item.author === id;
+  });
+ 
+  res.json({
+    task1,
+  });
 };
 
 exports.post = (req, res, next) => {
