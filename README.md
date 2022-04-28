@@ -88,7 +88,6 @@ Copy `.env.example` to `.env` and set your environment variables
   }
   ```
 
-<<<<<<< HEAD
 ### Update Task by Id
 
 - Method: PUT
@@ -136,13 +135,14 @@ no description and author
   "message": "No data Updated."
 }
 ```
-=======
-  ### Get ID Tasks
+
+### Get ID Tasks
 
 - Method: Get
 - Route: http://localhost:3000/api/tasks/1
 - Request: Empty
 - Response
+
   ```json
   {
     "data": [
@@ -156,7 +156,7 @@ no description and author
     ]
   }
   ```
-  
+
   ### Delete Tasks
 
 - Method: Delete
@@ -168,4 +168,3 @@ no description and author
     "message": "User Delete"
   }
   ```
->>>>>>> ae0ab11a14478b36079b89177d1ab17bd5209984
