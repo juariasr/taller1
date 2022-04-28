@@ -36,5 +36,14 @@ exports.put = (req, res, next) => {
 };
 
 exports.delete = (req, res, next) => {
-  res.json({ method: "delete" });
+  const { params = {} } = req;
+  const { id = '' } = params;
+
+  const task1 = data.find(function(item){
+    return item.author === id;
+  });
+  
+  data = data.filter(data => data.author !== id);
+ 
+  res.json({message : 'User Delete'});
 };
