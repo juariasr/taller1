@@ -139,7 +139,7 @@ Copy `.env.example` to `.env` and set your environment variables
 ### Get ID Tasks
 
 - Method: Get
-- Route: http://localhost:3000/api/tasks/1
+- Route: http://localhost:3000/api/tasks/{id}
 - Request: Empty
 - Response
 
@@ -160,7 +160,7 @@ Copy `.env.example` to `.env` and set your environment variables
 ### Delete Tasks
 
 - Method: Delete
-- Route: http://localhost:3000/api/tasks/1
+- Route: http://localhost:3000/api/tasks/{id}
 - Request: Empty
 - Response
   ```json
