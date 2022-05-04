@@ -1,12 +1,12 @@
 const http = require("http");
 const app = require("./server");
 const config = require("./server/config");
+const database = require("./server/database");
 
-const hostname = "127.0.0.1";
-const { port } = config;
+database.connect(config.database);
 
 const server = http.createServer(app);
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+server.listen(config.port, () => {
+  console.log(`Server running at ${config.port}`);
 });
