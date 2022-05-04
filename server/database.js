@@ -7,7 +7,7 @@ exports.connect = function ({
   password,
 }) {
   let dburl;
-  if (username !== "" && password !== "") {
+  if (username && password) {
     dburl = `${protocol}://${username}:${password}@${url}`;
   } else {
     dburl = `${protocol}://${url}`;
@@ -28,14 +28,14 @@ exports.connect = function ({
   });
 
   process.on("SIGINT", function () {
-    mongoose.disconnect.close(() => {
-      console.log("Database discconnected");
+    mongoose.connection.close(() => {
+      console.log("Database disconnected");
     });
   });
 };
 
 exports.disconnect = function () {
-  mongoose.disconnect.close(() => {
-    console.log("Database discconnected");
+  mongoose.connection.close(() => {
+    console.log("Database disconnected");
   });
 };

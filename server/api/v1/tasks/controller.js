@@ -1,3 +1,4 @@
+const Model = require("./model");
 let data = [];
 
 exports.all = (req, res, next) => {
@@ -17,18 +18,18 @@ exports.get = (req, res, next) => {
   });
 };
 
-exports.post = (req, res, next) => {
+exports.post = async (req, res, next) => {
   const { body = {} } = req;
-  let task = {
-    id: data.length + 1,
-    description: body.description,
-    author: body.author,
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  };
-
-  data.push(task);
-  res.json({ data: task });
+  const document = new Model(body);
+  document.createdAt = new Date();
+  document.updatedAt = new Date();
+  try {
+    const data = await document.save();
+    res.status(201);
+    res.json(data);
+  } catch (error) {
+    next(error);
+  }
 };
 
 exports.put = (req, res, next) => {
