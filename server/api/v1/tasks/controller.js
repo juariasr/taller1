@@ -1,8 +1,13 @@
 const Model = require("./model");
 let data = [];
 
-exports.all = (req, res, next) => {
-  res.json({ data: data });
+exports.all = async (req, res, next) => {
+  try {
+    const data = await Model.find({}).exec();
+    res.json({ data: data });
+  } catch (error) {
+    next(error);
+  }
 };
 
 exports.get = (req, res, next) => {
@@ -26,7 +31,7 @@ exports.post = async (req, res, next) => {
   try {
     const data = await document.save();
     res.status(201);
-    res.json(data);
+    res.json({ data: data });
   } catch (error) {
     next(error);
   }
