@@ -30,6 +30,7 @@ exports.connect = function ({
   process.on("SIGINT", function () {
     mongoose.connection.close(() => {
       console.log("Database disconnected");
+      process.exit(0);
     });
   });
 };
