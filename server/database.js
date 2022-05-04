@@ -20,7 +20,7 @@ exports.connect = function ({
   });
 
   mongoose.connection.on("close", function () {
-    console.log("Database discconnected");
+    console.log("Database disconnected");
   });
 
   mongoose.connection.on("error", function (err) {
