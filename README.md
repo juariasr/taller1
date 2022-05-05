@@ -157,3 +157,112 @@ Copy `.env.example` to `.env` and set your environment variables
     ]
   }
   ```
+
+### Get All Users
+
+- Method: Get
+- Route: http://localhost:3000/api/v1/users/
+- Request: Empty
+- Response
+  ```json
+  {
+    "data": [
+      {
+        "_id": "62729c4b46f812c455ab2de5",
+        "firstname": "Ulises",
+        "lastname": "Perez",
+        "email": "ulisesP@gmail.com",
+        "createdAt": "2022-05-04T15:05:25.124Z",
+        "updatedAt": "2022-05-05T12:51:34.341Z",
+        "_status": true,
+        "__v": 0
+      }
+    ]
+  }
+  ```
+
+### Post Users
+
+- Method: Post
+- Route: http://localhost:3000/api/v1/users/
+- Request
+
+  ```json
+  {
+    "firstname": "Test firstname",
+    "lastname": "Test lastname",
+    "email": "Test email"
+  }
+  ```
+
+- Response
+  ```json
+  {
+    "data": {
+        "_id": "62729c4b46f812c455ab2de5",
+        "firstname": "Ulises",
+        "lastname": "Perez",
+        "email": "ulisesP@gmail.com",
+        "createdAt": "2022-05-04T15:05:25.124Z",
+        "updatedAt": "2022-05-05T12:51:34.341Z",
+        "_status": true,
+        "__v": 0
+    }
+  }
+  ```
+
+  ### Put Users
+
+- Method: PUT
+- Route: http://localhost:3000/api/v1/users/{_id}
+- Request
+
+```json
+  {    
+    "firstname": "Another firstname",
+    "lastname": "Another lastname",
+    "email": "Another email"
+  }
+```
+
+- Response users updated
+
+ ```json
+  {
+    "data": [
+      {
+        "_id": "62729c4b46f812c455ab2de5",
+        "firstname": "Javier",
+        "lastname": "Jhonson",
+        "email": "javierJ@gmail.com",
+        "createdAt": "2022-05-04T15:05:25.124Z",
+        "updatedAt": "2022-05-05T13:00:20.341Z",
+        "_status": true,
+        "__v": 0
+      }
+    ]
+  }
+  ```
+
+  ### Disable Users
+
+- Method: DELETE
+- Route: http://localhost:3000/api/v1/users/{_id}/disable
+- Request: Empty
+- Response
+  ```json
+  {
+    "data": [
+      {
+        "_id": "62729c4b46f812c455ab2de5",
+        "firstname": "Javier",
+        "lastname": "Jhonson",
+        "email": "javierJ@gmail.com",
+        "createdAt": "2022-05-04T15:05:25.124Z",
+        "updatedAt": "2022-05-05T14:21:12.341Z",
+        "_status": false,
+        "__v": 0
+      }
+    ]
+  }
+  ```
