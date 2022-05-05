@@ -41,7 +41,7 @@ exports.put = async (req, res, next) => {
     dataModify.description = body.description;
     dataModify.author = body.author;
     dataModify.updatedAt = new Date();   
-    const data = await Model.findByIdAndUpdate(params.id, dataModify).exec(); 
+    const data = await dataModify.save(); 
     res.json({ data: data });
   } catch (error) {
     next(error);
