@@ -9,16 +9,13 @@ exports.all = async (req, res, next) => {
     }
   };
 
-exports.get = (req, res, next) => {
-    res.json({ message: "get" });
-};
-
 exports.post = async (req, res, next) => {
 
     const { body = {} } = req;
     const document = new Model(body);
     document.createdAt = new Date();
     document.updatedAt = new Date();
+    document._status = true;
     try {
       const data = await document.save();
       res.status(201);
@@ -28,10 +25,31 @@ exports.post = async (req, res, next) => {
     }
 };
 
-exports.put = (req, res, next) => {
-    res.json({ message: "put" });
-};
+exports.put = async (req, res, next) => {  
+    const { body = {} } = req;  
+    const { params = {} } = req;
+    try {
+      const dataModify = await Model.findById(params.id).exec();
+      dataModify.firstname = body.firstname;
+      dataModify.lastname = body.lastname;
+      dataModify.email = body.email;
+      dataModify.updatedAt = new Date();   
+      const data = await dataModify.save(); 
+      res.json({ data: data });
+    } catch (error) {
+      next(error);
+    } 
+  };
 
-exports.disable = (req, res, next) => {
-    res.json({ message: "disable" });
+exports.disable = async (req, res, next) => { 
+    const { params = {} } = req;
+    try {
+      const dataModify = await Model.findById(params.id).exec();
+      dataModify.updatedAt = new Date();
+      dataModify._status = false;
+      const data = await dataModify.save(); 
+      res.json({ data: data });
+    } catch (error) {
+      next(error);
+    } 
 };

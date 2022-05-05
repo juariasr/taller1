@@ -6,6 +6,7 @@ const fields = {
   email: String,
   createdAt: Date,
   updatedAt: Date,
+  _status: Boolean,
 };
 
 module.exports = mongoose.model("users", fields);
