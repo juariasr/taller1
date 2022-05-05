@@ -91,48 +91,29 @@ Copy `.env.example` to `.env` and set your environment variables
 ### Update Task by Id
 
 - Method: PUT
-- Route: http://localhost:3000/api/tasks
+- Route: http://localhost:3000/api/tasks/{id}
 - Request
 
 ```json
-  {
-    "id":1,
+  {    
     "description": "Test Description",
     "author": "Test Author"
   }
 ```
 
-- Response
+- Response task updated
 
-  Susccesfully Update:
-
-  ```json
+ ```json
   {
-    "message": "Task Updated"
-  }
-  ```
-
-  task id not inside body
-
-  ```json
-  {
-    "message": "Task Id not found in body Data."
-  }
-  ```
-
-  no task found by Id
-
-  ```json
-  {
-    "message": "No task found by id."
-  }
-  ```
-
-  no description and author
-
-  ```json
-  {
-    "message": "No data Updated."
+    "data": [
+      {
+        "id": 1,
+        "description": "Otra description",
+        "author": "Ulises Perez",
+        "createdAt": "2022-04-27T22:32:40.580Z",
+        "updatedAt": "2022-04-27T22:32:40.580Z"
+      }
+    ]
   }
   ```
 
@@ -162,9 +143,17 @@ Copy `.env.example` to `.env` and set your environment variables
 - Method: Delete
 - Route: http://localhost:3000/api/tasks/{id}
 - Request: Empty
-- Response
+- Response Task Deleted
   ```json
   {
-    "message": "User Delete"
+    "data": [
+      {
+        "id": 1,
+        "description": "Otra description",
+        "author": "Ulises Perez",
+        "createdAt": "2022-04-27T22:32:40.580Z",
+        "updatedAt": "2022-04-27T22:32:40.580Z"
+      }
+    ]
   }
   ```
