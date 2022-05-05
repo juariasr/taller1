@@ -88,7 +88,7 @@ Copy `.env.example` to `.env` and set your environment variables
   }
   ```
 
-### Update Task by Id
+### Put Task
 
 - Method: PUT
 - Route: http://localhost:3000/api/tasks/{id}
