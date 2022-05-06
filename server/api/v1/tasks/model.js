@@ -1,10 +1,19 @@
 const mongoose = require("mongoose");
+const { Schema } = mongoose;
 
 const fields = {
-  description: String,
-  author: String,
-  createdAt: Date,
-  updatedAt: Date,
+  description: {
+    type: String,  
+    required: true
+  },
+  userId: {
+    type: String,
+    required: true
+  }  
 };
 
-module.exports = mongoose.model("task", fields);
+const task = new Schema(fields, {
+  timestamps: true
+});
+
+module.exports = mongoose.model("task", task);

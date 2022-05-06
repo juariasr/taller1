@@ -21,9 +21,7 @@ exports.get = async (req, res, next) => {
 
 exports.post = async (req, res, next) => {
   const { body = {} } = req;
-  const document = new Model(body);
-  document.createdAt = new Date();
-  document.updatedAt = new Date();
+  const document = new Model(body);  
   try {
     const data = await document.save();
     res.status(201);
@@ -39,8 +37,7 @@ exports.put = async (req, res, next) => {
   try {
     const dataModify = await Model.findById(params.id).exec();
     dataModify.description = body.description;
-    dataModify.author = body.author;
-    dataModify.updatedAt = new Date();   
+    dataModify.author = body.author;    
     const data = await dataModify.save(); 
     res.json({ data: data });
   } catch (error) {
