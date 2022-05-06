@@ -1,8 +1,8 @@
-const Model = require("./model");
+const { Model } = require("./model");
 
 exports.all = async (req, res, next) => {
   try {
-    const data = await Model.find({}).exec();
+    const data = await Model.find({}).populate('userId').exec();
     res.json({ data: data });
   } catch (error) {
     next(error);

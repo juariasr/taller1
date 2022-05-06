@@ -5,15 +5,23 @@ const fields = {
   description: {
     type: String,  
     required: true
-  },
+  }
+};
+
+const references = {  
   userId: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'user',
     required: true
   }  
 };
 
-const task = new Schema(fields, {
+const task = new Schema(Object.assign(fields, references), {
   timestamps: true
 });
 
-module.exports = mongoose.model("task", task);
+module.exports = {
+    Model: mongoose.model("task", task),
+    fields,
+    references
+};
