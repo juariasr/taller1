@@ -45,7 +45,7 @@ Copy `.env.example` to `.env` and set your environment variables
 ### Get Tasks
 
 - Method: Get
-- Route: http://localhost:3000/api/tasks
+- Route: http://localhost:3000/api/v1/tasks
 - Request: Empty
 - Response
   ```json
@@ -74,7 +74,7 @@ Copy `.env.example` to `.env` and set your environment variables
 ### Post Tasks
 
 - Method: Post
-- Route: http://localhost:3000/api/tasks
+- Route: http://localhost:3000/api/v1/tasks
 - Request
 
   ```json
@@ -100,7 +100,7 @@ Copy `.env.example` to `.env` and set your environment variables
 ### Put Task
 
 - Method: PUT
-- Route: http://localhost:3000/api/tasks/{id}
+- Route: http://localhost:3000/api/v1/tasks/{id}
 - Request
 
 ```json
@@ -129,7 +129,7 @@ Copy `.env.example` to `.env` and set your environment variables
 ### Get ID Tasks
 
 - Method: Get
-- Route: http://localhost:3000/api/tasks/{id}
+- Route: http://localhost:3000/api/v1/tasks/{id}
 - Request: Empty
 - Response
 
@@ -159,7 +159,7 @@ Copy `.env.example` to `.env` and set your environment variables
 ### Delete Tasks
 
 - Method: Delete
-- Route: http://localhost:3000/api/tasks/{id}
+- Route: http://localhost:3000/api/v1/tasks/{id}
 - Request: Empty
 - Response Task Deleted
   ```json
@@ -192,7 +192,7 @@ Copy `.env.example` to `.env` and set your environment variables
         "email": "ulisesP@gmail.com",
         "createdAt": "2022-05-04T15:05:25.124Z",
         "updatedAt": "2022-05-05T12:51:34.341Z",
-        "_status": true,
+        "status": true,
         "__v": 0
       }
     ]
@@ -223,7 +223,7 @@ Copy `.env.example` to `.env` and set your environment variables
         "email": "ulisesP@gmail.com",
         "createdAt": "2022-05-04T15:05:25.124Z",
         "updatedAt": "2022-05-05T12:51:34.341Z",
-        "_status": true,
+        "status": true,
         "__v": 0
     }
   }
@@ -255,7 +255,7 @@ Copy `.env.example` to `.env` and set your environment variables
         "email": "javierJ@gmail.com",
         "createdAt": "2022-05-04T15:05:25.124Z",
         "updatedAt": "2022-05-05T13:00:20.341Z",
-        "_status": true,
+        "status": true,
         "__v": 0
       }
     ]
@@ -278,7 +278,7 @@ Copy `.env.example` to `.env` and set your environment variables
         "email": "javierJ@gmail.com",
         "createdAt": "2022-05-04T15:05:25.124Z",
         "updatedAt": "2022-05-05T14:21:12.341Z",
-        "_status": false,
+        "status": false,
         "__v": 0
       }
     ]
