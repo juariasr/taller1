@@ -54,7 +54,16 @@ Copy `.env.example` to `.env` and set your environment variables
       {
         "id": 1,
         "description": "Otra description",
-        "author": "Ulises Perez",
+        "author": {
+                "_id": "6275164322768b9b10a71b58",
+                "firstname": "Carlos",
+                "lastname": "Test",
+                "email": "test@gmail.com",
+                "status": true,
+                "createdAt": "2022-05-06T12:36:19.648Z",
+                "updatedAt": "2022-05-06T12:37:58.021Z",
+                "__v": 0
+        },
         "createdAt": "2022-04-27T22:32:40.580Z",
         "updatedAt": "2022-04-27T22:32:40.580Z"
       }
@@ -81,7 +90,7 @@ Copy `.env.example` to `.env` and set your environment variables
     "data": {
       "id": 1,
       "description": "Test Description",
-      "author": "Test Author",
+      "author": "6275164322768b9b10a71b58",
       "createdAt": "2022-04-27T22:55:51.320Z",
       "updatedAt": "2022-04-27T22:55:51.320Z"
     }
@@ -109,7 +118,7 @@ Copy `.env.example` to `.env` and set your environment variables
       {
         "id": 1,
         "description": "Otra description",
-        "author": "Ulises Perez",
+        "author": "6275164322768b9b10a71b5",
         "createdAt": "2022-04-27T22:32:40.580Z",
         "updatedAt": "2022-04-27T22:32:40.580Z"
       }
@@ -130,7 +139,16 @@ Copy `.env.example` to `.env` and set your environment variables
       {
         "id": 1,
         "description": "Otra description",
-        "author": "Ulises Perez",
+        "author": {
+                "_id": "6275164322768b9b10a71b58",
+                "firstname": "Carlos",
+                "lastname": "Test",
+                "email": "test@gmail.com",
+                "status": true,
+                "createdAt": "2022-05-06T12:36:19.648Z",
+                "updatedAt": "2022-05-06T12:37:58.021Z",
+                "__v": 0
+        },
         "createdAt": "2022-04-27T22:32:40.580Z",
         "updatedAt": "2022-04-27T22:32:40.580Z"
       }
@@ -150,7 +168,7 @@ Copy `.env.example` to `.env` and set your environment variables
       {
         "id": 1,
         "description": "Otra description",
-        "author": "Ulises Perez",
+        "author": "6275164322768b9b10a71b58",
         "createdAt": "2022-04-27T22:32:40.580Z",
         "updatedAt": "2022-04-27T22:32:40.580Z"
       }

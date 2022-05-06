@@ -2,7 +2,7 @@ const { Model } = require("./model");
 
 exports.all = async (req, res, next) => {
   try {
-    const data = await Model.find({}).populate('userId').exec();
+    const data = await Model.find({}).populate('author').exec();
     res.json({ data: data });
   } catch (error) {
     next(error);
@@ -12,7 +12,7 @@ exports.all = async (req, res, next) => {
 exports.get = async (req, res, next) => {
   const { params = {} } = req;
   try {
-    const data = await Model.findById(params.id).exec();
+    const data = await Model.findById(params.id).populate('author').exec();
     res.json({ data: data });
   } catch (error) {
     next(error);
